@@ -5,7 +5,3 @@ class Note(models.Model):
     title = models.CharField(max_length=200)
     text = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
-
-    @property
-    def text_preview(self):
-        return self.text[:128] + "..."

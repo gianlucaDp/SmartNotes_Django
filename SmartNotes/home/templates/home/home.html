@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Homepage</title>
-</head>
-<body>
-<h1>This is the homepage!</h1>
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Smart Notes</h1>
 <p>Welcome, today is {{ today }}</p>
-</body>
-</html>
+<a href="{% url 'notes.list' %}" class="btn btn-primary"> Enter </a>
+{% endblock %}
