@@ -10,3 +10,5 @@ def home(request):
 @login_required(login_url='/admin')
 def authorized(request):
     return render(request, "home/authorized.html", {})
+
+

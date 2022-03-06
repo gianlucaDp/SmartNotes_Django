@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes</title>
+</head>
+<body>
+<h1>This is the notes list</h1>
+<lu>
+    {% for note in notes %}
+    <li> <b>{{ note.title }}</b>: {{ note.text_preview }}</li>
+    {% endfor %}
+</lu>
+</body>
+</html>
