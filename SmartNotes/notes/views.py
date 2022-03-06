@@ -1,12 +1,15 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Note
+from django.views.generic import ListView, DetailView
 
 
-def notes_list(request):
-    notes = Note.objects.all()
-    return render(request, "notes/notes_list.html", {'notes': notes})
+class NotesListView(ListView):
+    model = Note
+    context_object_name = "notes"
+    template_name = "notes/notes_list.html"  # not necessary if we follow name convention
 
 
-def note_detail(request, pk):
-    note = get_object_or_404(Note, pk=pk)
-    return render(request, "notes/note_detail.html", {'note': note})
+class NoteDetailView(DetailView):
+    model = Note
+    context_object_name = "note"
+    template_name = "notes/note_detail.html"
