@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    <p>Are you sure you want to delete "{{note.title}}" </p>
+    <p>The action cannot be undone</p>
+    <button type="submit" class="btn btn-danger btn-lg">Confirm</button>
+    <a href="{% url 'notes.list' %}" class="btn btn-secondary btn-lg">Back</a>
+</form>
+{% if form.errors %}
+<div class="alert alert-danger my-5">
+    {{ form.errors.title.as_text }}
+</div>
+{% endif %}
+{% endblock %}
